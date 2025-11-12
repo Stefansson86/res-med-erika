@@ -24,9 +24,15 @@ npm run build
 
 ## Deploya till GitHub Pages
 
-1. Bygg projektet: `npm run build`
-2. Pusha dist-mappen till gh-pages-branchen
-3. Aktivera GitHub Pages i repository settings
+Projektet använder GitHub Actions för automatisk deployment:
+
+1. Gå till repository Settings → Pages
+2. Under "Build and deployment", välj "GitHub Actions" som källa
+3. Pusha till main/master branch - deployment sker automatiskt!
+4. Spelet blir tillgängligt på: `https://stefansson86.github.io/res-med-erika/`
+
+Eller kör workflow manuellt:
+- Gå till "Actions" tab → "Deploy to GitHub Pages" → "Run workflow"
 
 ## Spelregler
 
