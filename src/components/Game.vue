@@ -3,6 +3,7 @@
     <h1>På Spåret</h1>
 
     <div class="score-display">
+      <p>Destination {{ currentDestinationIndex + 1 }} av {{ destinations.length }}</p>
       <p>Totalpoäng: {{ totalScore }}</p>
     </div>
 
@@ -88,15 +89,20 @@ const submitGuess = () => {
 }
 
 const nextDestination = () => {
-  // Återställ för nästa runda (funkar inte riktigt än eftersom vi bara har en destination)
+  // Återställ för nästa runda
   hasWon.value = false
   currentClueIndex.value = 0
   currentGuess.value = ''
   feedbackMessage.value = ''
   lastPoints.value = 0
 
-  // Här skulle man byta till nästa destination om det fanns fler
-  // currentDestinationIndex.value++
+  // Gå till nästa destination om det finns fler
+  if (currentDestinationIndex.value < destinations.length - 1) {
+    currentDestinationIndex.value++
+  } else {
+    // Alla destinationer klara - börja om från början
+    currentDestinationIndex.value = 0
+  }
 }
 </script>
 
